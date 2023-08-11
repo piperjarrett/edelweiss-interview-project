@@ -5,7 +5,6 @@ import "./ProductContainer.css";
 
 const ProductContainer = () => {
   const [catalogInfo, setCatalogInfo] = useState(catalog);
-
   const products = catalogInfo.products.map((product) => {
     return <Product product={product} />;
   });

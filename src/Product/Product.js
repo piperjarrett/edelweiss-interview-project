@@ -1,19 +1,26 @@
+import { useState } from "react";
 import fillerImage from "../fillerImage.jpg";
 import "./Product.css";
 
 const Product = ({ product }) => {
+  const [error, setError] = useState(false);
   const jackcoverimage = product.images?.find((image) =>
     image.uri.includes("jacket_covers")
   );
 
   const author = product.author?.split(",").reverse().join(" ");
+  
+  const catchError = () => {
+    setError(true);
+  };
 
   return (
-    <div className="product-div" key={product.sku}>
+    <div className="product-div" key={product.title}>
       <div className="image-div">
         <img
           alt="cover"
-          src={jackcoverimage ? jackcoverimage.uri : fillerImage}
+          onError={catchError}
+          src={jackcoverimage && !error ? jackcoverimage.uri : fillerImage}
         />
       </div>
 

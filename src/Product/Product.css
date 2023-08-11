@@ -6,10 +6,7 @@ yellow FAB242 */
 
 
 .product-div {
-    width: 20rem;
-    height: 30rem;
     margin: 1rem;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,3 +25,7 @@ img {
     height: 100%;
 }
 
+.product-info {
+    width: 20rem;
+    padding-bottom: 1rem
+}
