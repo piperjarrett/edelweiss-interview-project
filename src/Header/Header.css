@@ -1,0 +1,20 @@
+/* slate gray #777E88
+Payne's gray #4D5764
+whiteish #E6E8E9
+paynes gray again #616A76
+yellow FAB242 */
+
+header {
+    background-color: #616A76;
+    font: normal normal bold'open sans',sans-serif;
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.08), 0 2px 16px 0 rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+    margin-top: 0rem;
+    padding-top: 1rem;
+}
+
+h2 {
+    padding-bottom: .5rem;
+}
