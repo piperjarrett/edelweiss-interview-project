@@ -3,11 +3,9 @@ import catalog from "../data";
 import "./Header.css";
 const Header = () => {
   const [headerCatalog, setHeaderCatalog] = useState(catalog);
-  console.log(headerCatalog);
+
   return (
-    <header
-    // style={{ backgroundImage: `url('${headerCatalog.imageUri}')` }}
-    >
+    <header>
       <h1>{headerCatalog.name}</h1>
       <h2>{headerCatalog.orgName}</h2>
     </header>

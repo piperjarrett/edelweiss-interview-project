@@ -1,0 +1,31 @@
+/* slate gray #777E88
+Payne's gray #4D5764
+whiteish #E6E8E9
+paynes gray again #616A76
+yellow FAB242 */
+
+
+.product-div {
+    width: 20rem;
+    height: 30rem;
+    margin: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #4D5764;
+    box-shadow: 0 0 8px 0 black, 0 2px 4px 0 #616A76;
+    border-radius: 4px;
+}
+
+.image-div {
+    width: 20rem;
+    height: 20rem;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
