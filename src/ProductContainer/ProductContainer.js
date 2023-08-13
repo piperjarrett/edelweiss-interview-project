@@ -5,7 +5,18 @@ import "./ProductContainer.css";
 
 const ProductContainer = () => {
   const [catalogInfo, setCatalogInfo] = useState(catalog);
-  const products = catalogInfo.products.map((product) => {
+  let removeDuplicates;
+  for (let i in catalogInfo.products) {
+    removeDuplicates = catalogInfo.products.filter((product, index) => {
+      if (
+        index !== i &&
+        JSON.stringify(product) !== JSON.stringify(catalogInfo.products[i])
+      ) {
+        return product;
+      }
+    });
+  }
+  const products = removeDuplicates.map((product) => {
     return <Product product={product} />;
   });
   return <section>{products}</section>;
