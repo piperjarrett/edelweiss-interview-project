@@ -16,8 +16,12 @@ const ProductContainer = () => {
       }
     });
   }
-  const products = removeDuplicates.map((product) => {
-    return <Product product={product} />;
+  const products = removeDuplicates.map((product, index) => {
+    return (
+      <div key={index}>
+        <Product product={product} index={index} />
+      </div>
+    );
   });
   return <section>{products}</section>;
 };
