@@ -2,7 +2,7 @@ import { useState } from "react";
 import catalog from "../data";
 import "./Header.css";
 const Header = () => {
-  const [headerCatalog, setHeaderCatalog] = useState(catalog);
+  const [headerCatalog, setHeaderCatalog] = useState(catalog); // this is a placeholder for a proper fetch
 
   return (
     <header>

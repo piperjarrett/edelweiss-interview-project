@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Edelweiss Interview Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prompt
 
-## Available Scripts
+Edelweiss developer interview project
 
-In the project directory, you can run:
+Please create a simple “catalog viewer” page based on the data found here. You can copy/paste
+this address in your browser’s URL address bar to view the JSON:
+https://api.edelweiss.plus/api/v2/catalogs/3843/products?productProperties=images
 
-### `npm start`
+Project requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+For each “product” in the “catalog” retrieved, please display the name, author, “jacket cover” image and anything else you’d like to add. This is an example of one of the jacket cover images found in the data noted above: https://edel-images.azureedge.net/ea/OO/images/jacket_covers/original/1000000007_5bbee.jpg
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Technical requirements
 
-### `npm test`
+- Please use the data from the address above. You can simply copy/paste the data into a file if you’d like. If you try to “fetch” the data from the browser, you will encounter a CORS error.
+- Please use React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The final product does not need to be extremely polished. Please spend no more than 2 hours on this! Thank you.
 
-### `npm run build`
+This is the only part of the interview process where you will be asked to produce code.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once you have cloned the repo, change into the directory and install the project dependencies. `Run npm install` to install project dependencies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run `npm start` in the terminal to see the page running in your browser on `http://localhost:3000/`.
 
-### `npm run eject`
+## Thought Process / Assumptions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I began the process by sketching an architecture diagram on paper, aiming to determine the optimal way to present the data. After finalizing the flow, I assessed the dataset and identified several adjustments that were necessary:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implemented error handling for 404 image URIs.
+- Introduced placeholder images for any missing URIs.
+- Eliminated duplicate entries of 'products' from the dataset.
+- Modified the author's name format to adhere to first name followed by last name (e.g., John Doe).
