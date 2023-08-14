@@ -2,16 +2,16 @@ import { useState } from "react";
 import fillerImage from "../fillerImage.jpg";
 import "./Product.css";
 
-const Product = ({ product}) => {
-  const [error, setError] = useState(false);
-  const jackcoverimage = product.images?.find((image) =>
+const Product = ({ product }) => {
+  const [imageLoadedError, setImageLoadedError] = useState(false); // rename to be imageLoadedError
+  const jackCoverImage = product.images?.find((image) =>
     image.uri.includes("jacket_covers")
   );
 
   const author = product.author?.split(",").reverse().join(" ");
 
   const catchError = () => {
-    setError(true);
+    setImageLoadedError(true);
   };
 
   return (
@@ -20,13 +20,13 @@ const Product = ({ product}) => {
         <img
           alt="cover"
           onError={catchError}
-          src={jackcoverimage && !error ? jackcoverimage.uri : fillerImage}
+          src={jackCoverImage && !imageLoadedError ? jackCoverImage.uri : fillerImage}
         />
       </div>
       <div className="product-info">
-        <h3>{product.name ? product.name : "Unkown"}</h3>
-        <h4>By: {product.author ? author : "Unkown"}</h4>
-        <p>{product.category ? product.category : "Unkown Category"}</p>
+        <h3>{product.name ? product.name : "Unknown"}</h3>
+        <h4>By: {product.author ? author : "Unknown"}</h4>
+        <p>{product.category ? product.category : "Unknown Category"}</p>
       </div>
     </div>
   );
